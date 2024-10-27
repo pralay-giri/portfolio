@@ -1,0 +1,11 @@
+/* .large-virson >  */
+.dot {
+    @apply w-[8px] aspect-square bg-mouse-fllower-dot left-0 top-0 rounded-full fixed;
+    transform: translate(-50%, -50%);
+}
+
+/* .large-virson >  */
+.circle {
+    @apply w-24 aspect-square bg-transparent border-[1.6px] border-mouse-fllower-circle left-0 top-0 rounded-full fixed;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,10 @@
+.nav-hover {
+    @apply relative p-1;
+}
+.nav-hover::before {
+    @apply absolute content-[""] w-[100%] h-[1px] bottom-0 left-0 bg-white scale-x-0 transition-all duration-300 rounded-md;
+}
+
+.nav-hover:hover::before {
+    @apply w-[100%] scale-x-100;
+}

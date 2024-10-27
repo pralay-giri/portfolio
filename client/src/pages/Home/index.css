@@ -1,0 +1,21 @@
+.animated-text {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 10px;
+}
+
+.animated-text-2 {
+    @apply absolute top-0 left-[2px] bg-clip-text bg-white !text-transparent;
+    z-index: -1;
+}
+
+.animated-text-3 {
+    @apply absolute top-0 -left-[2px] bg-clip-text bg-[#f7418f] !text-transparent;
+    z-index: -1;
+}
+
+.animate-arrow {
+    /* animation: alternate; */
+}

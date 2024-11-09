@@ -10,22 +10,22 @@ const links = [
     {
         name: "github",
         element: <FaGithub />,
-        link: "",
+        link: "https://github.com/pralay-giri",
     },
     {
         name: "instagram",
         element: <FaInstagram />,
-        link: "",
+        link: "https://www.instagram.com/_pralaygiri",
     },
     {
         name: "linkedin",
         element: <FaLinkedinIn />,
-        link: "",
+        link: "https://www.linkedin.com/in/prala-ygiri",
     },
     {
         name: "facebook",
         element: <TiSocialFacebook />,
-        link: "",
+        link: "https://www.facebook.com/profile.php?id=100087947311318",
     },
 ]
 

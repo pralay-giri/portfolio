@@ -4,6 +4,7 @@ import Home from "@pages/Home"
 import About from "@pages/About"
 import Contact from "@pages/Contact"
 import Projects from "@pages/Projects"
+import Resume from "@pages/Resume"
 import Loadder from "@/components/loadder"
 const App = lazy(() => import("@/App"))
 
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path: "/projects",
                 element: <Projects />,
+            },
+            {
+                path: "/resume",
+                element: <Resume />,
             },
         ],
     },

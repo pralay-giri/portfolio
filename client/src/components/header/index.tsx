@@ -30,6 +30,11 @@ const navigationLinks: {
         name: "Contact",
         path: "contact",
     },
+    {
+        id: 4,
+        name: "Resume",
+        path: "resume",
+    },
 ]
 
 const Header: React.FC<PROPTYPE> = () => {

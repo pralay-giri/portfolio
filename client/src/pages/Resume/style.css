@@ -1,0 +1,10 @@
+.fullscreen {
+    @apply fixed w-full inset-0 left-0 top-0  backdrop-blur-lg;
+}
+
+.fullscreen > img {
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+    margin: auto;
+}

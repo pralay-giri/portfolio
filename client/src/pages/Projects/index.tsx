@@ -126,7 +126,7 @@ const Projects: React.FC = () => {
 
             <div className="a-3 my-10">
                 <NavLink
-                    to={"/about"}
+                    to={"/resume"}
                     className="flex gap-5 items-center w-fit group"
                 >
                     <p className="group-hover:underline group-hover:underline-offset-4 ">

@@ -1,5 +1,5 @@
 .bg-color {
-    @apply fixed w-screen h-screen top-0 left-0  bg-[#03001c] -z-50;
+    @apply fixed w-screen h-screen top-0 left-0  dark:bg-[#03001c] bg-white -z-50;
 }
 
 .bg-grid {
@@ -7,20 +7,25 @@
 }
 
 .text {
-    @apply fixed overflow-hidden w-screen h-screen inset-0 left-0 uppercase text-gray-500 -z-20 opacity-10 font-extrabold;
+    @apply fixed overflow-hidden w-screen h-screen inset-0 left-0 uppercase text-gray-800 dark:text-gray-500 -z-20 opacity-10 font-extrabold;
     font-size: 18rem;
     top: calc(100% - 22rem);
 }
 
 .bg-image {
-    @apply fixed overflow-hidden w-screen h-screen top-0 left-0 -z-10 bg-opacity-25 to-inherit opacity-45 backdrop-blur-3xl;
+    @apply fixed overflow-hidden w-screen h-screen top-0 left-0 -z-10 bg-opacity-25 to-inherit opacity-50 dark:opacity-45 backdrop-blur-3xl;
     background-image: url("/gradianbg.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.overlay {
+.dark .overlay {
     @apply fixed w-screen h-screen top-0 left-0 -z-10 opacity-60;
     background: radial-gradient(circle, transparent 0%, #000000 100%);
+}
+
+.overlay {
+    @apply fixed w-screen h-screen top-0 left-0 -z-10 opacity-60;
+    background: radial-gradient(circle, white 0%, white 100%);
 }

@@ -18,6 +18,7 @@ import { useGSAP } from "@gsap/react"
 import Footer from "@/components/footer"
 import { NavLink } from "react-router-dom"
 import { FaArrowRightLong } from "react-icons/fa6"
+import useChildPopup from "@/hooks/useChildPopup"
 
 gsap.registerPlugin(useGSAP)
 
@@ -72,11 +73,16 @@ const Contact: React.FC = () => {
         dispatch(setInputs({ key: e.target.name, value: e.target.value }))
     }
 
+    useChildPopup(animationContext, "0.3", [])
+
     return (
-        <div className="mx-[15%] my-24 font-serif" ref={animationContext}>
+        <div
+            className="mx-[15%] my-24 font-serif text-[#0C0C0C] dark:text-white"
+            ref={animationContext}
+        >
             <header className="text-6xl font-bold relative w-fit">
                 Contact
-                <span className="after:absolute after:w-2 after:h-2 after:bg-white after:bottom-2 after:-right-3"></span>
+                <span className="after:absolute after:w-2 after:h-2 after:bg-[#0C0C0C] dark:after:bg-white after:bottom-2 after:-right-3"></span>
             </header>
             <p className="my-10">
                 Get in touch or send a email directly on{" "}
@@ -88,7 +94,7 @@ const Contact: React.FC = () => {
                 </strong>
             </p>
             <form onSubmit={handleSendMessage}>
-                <section className="flex flex-col *:w-[60%] gap-10 *:px-4 *:py-3 *:text-xl *:bg-transparent *:border *:border-gray-700  *:outline-none *:rounded-sm *:opacity-85 *:transition-all">
+                <section className="flex flex-col *:w-[60%] gap-10 *:px-4 *:py-3 *:text-xl *:bg-transparent *:border *:border-gray-700  *:outline-none *:rounded-sm *:opacity-85 *:transition-all dark:*:placeholder:text-inherit *:placeholder:text-[#0C0C0C] *:placeholder:opacity-60">
                     <input
                         type="text"
                         name="name"
@@ -96,7 +102,7 @@ const Contact: React.FC = () => {
                         value={contactInputs.name}
                         required={true}
                         placeholder="Name"
-                        className="focus:bg-black focus:bg-opacity-40 focus:opacity-100"
+                        className="dark:focus:bg-[#0C0C0C] focus:bg-white  focus:bg-opacity-40 focus:opacity-100"
                         onChange={handleInputsCnahge}
                     />
                     <input
@@ -106,7 +112,7 @@ const Contact: React.FC = () => {
                         value={contactInputs.email}
                         required={true}
                         placeholder="Email"
-                        className="focus:bg-black focus:bg-opacity-40 focus:opacity-100"
+                        className="dark:focus:bg-[#0C0C0C] focus:bg-white focus:bg-opacity-40 focus:opacity-100"
                         onChange={handleInputsCnahge}
                     />
                     <textarea
@@ -116,11 +122,11 @@ const Contact: React.FC = () => {
                         placeholder="Message"
                         required={true}
                         rows={5}
-                        className="resize-none focus:bg-black focus:bg-opacity-40 focus:opacity-100"
+                        className="resize-none dark:focus:bg-[#0C0C0C] focus:bg-white focus:bg-opacity-40 focus:opacity-100"
                         onChange={handleInputsCnahge}
                     ></textarea>
                 </section>
-                <button className="text-lg font-thin rounded-sm my-10 bg-gray-200 text-black px-5 py-3 flex gap-2 justify-center items-center overflow-hidden">
+                <button className="text-lg font-thin rounded-sm my-10  bg-[#0C0C0C] text-white dark:bg-gray-200 dark:text-[#0C0C0C] px-5 py-3 flex gap-2 justify-center items-center overflow-hidden">
                     Send Message
                     <span className="send-icon">
                         <IoSend />

@@ -16,6 +16,7 @@ import Footer from "@/components/footer"
 import { NavLink } from "react-router-dom"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import useChildPopup from "@/hooks/useChildPopup"
 
 gsap.registerPlugin(useGSAP)
 
@@ -91,11 +92,16 @@ const index: React.FC = () => {
         })
     }, [{ scope: animationContainerRef }])
 
+    useChildPopup(animationContainerRef, "0.3", [])
+
     return (
-        <div className="mx-[15%] my-[4%]" ref={animationContainerRef}>
+        <div
+            className="mx-[15%] my-[4%] text-[#0C0C0C] dark:text-white"
+            ref={animationContainerRef}
+        >
             <header className="text-6xl font-bold relative w-fit">
                 Resume
-                <span className="after:absolute after:w-2 after:h-2 after:bg-white after:bottom-3 after:-right-3 after:rounded-sm"></span>
+                <span className="after:absolute after:w-2 after:h-2 after:bg-[#0C0C0C] dark:after:bg-white after:bottom-3 after:-right-3 after:rounded-sm"></span>
             </header>
             <p className="my-5">
                 <span>Reach out to me via</span>{" "}

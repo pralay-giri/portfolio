@@ -82,13 +82,13 @@ const Projects: React.FC = () => {
         })
     }, [{ scope: animationContainerRef }])
 
-    useChildPopup(animationContainerRef, "0.5")
+    useChildPopup(animationContainerRef, "0.5", [])
 
     return (
-        <div className="mx-[15%] my-[7%] " ref={animationContainerRef}>
-            <header className="text-4xl font-bold relative w-fit">
+        <div className="mx-[15%] my-[7%]" ref={animationContainerRef}>
+            <header className="text-4xl font-bold relative w-fit text-[#0C0C0C] dark:text-white">
                 Projects
-                <span className="after:absolute after:w-2 after:h-2 after:bg-white after:bottom-1 after:-right-3 after:rounded-sm"></span>
+                <span className="after:absolute after:w-2 after:h-2 after:bg-[#0C0C0C] dark:after:bg-white after:bottom-1 after:-right-3 after:rounded-sm"></span>
             </header>
             <section className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10">
                 {projects.map((project) => {
@@ -124,7 +124,7 @@ const Projects: React.FC = () => {
                 })}
             </section>
 
-            <div className="a-3 my-10">
+            <div className="a-3 my-10 text-[#0C0C0C] dark:text-white">
                 <NavLink
                     to={"/resume"}
                     className="flex gap-5 items-center w-fit group"

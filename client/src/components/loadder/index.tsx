@@ -16,7 +16,10 @@ const Loadder: React.FC = () => {
     }, [{ scope: animationScope }])
 
     return (
-        <div className="fixed top-0 left-0 inset-0 bg-loadder-bg grid place-content-center">
+        <div
+            className="fixed top-0 left-0 inset-0 dark:bg-loadder-bg dark:text-white text-black bg-white
+         grid place-content-center"
+        >
             <section
                 ref={animationScope}
                 className="flex gap-5 text-2xl *:capitalize"

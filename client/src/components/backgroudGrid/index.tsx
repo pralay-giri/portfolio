@@ -24,7 +24,7 @@ const BackgroudGrid: React.FC<PROPTYPE> = () => {
             elements.push(
                 <div
                     key={i}
-                    className={`grid-element grid-${i} w-[${BOX_SIZE}px] aspect-square border border-white`}
+                    className={`grid-element grid-${i} w-[${BOX_SIZE}px] aspect-square `}
                 ></div>,
             )
         }
@@ -49,7 +49,7 @@ const BackgroudGrid: React.FC<PROPTYPE> = () => {
         <div className="rgb-backgournd absolute inset-0 pointer-events-none">
             <div
                 ref={gridContainer}
-                className={`bg-grid  fixed -top-2 -left-2 *:border-opacity-5 over`}
+                className={`bg-grid  fixed -top-2 -left-2 dark:*:border-opacity-5 dark:*:border dark:*:border-white *:border-opacity-10 *:border *:border-[#0C0C0C]`}
                 style={{
                     display: "grid",
                     gridTemplateColumns: `repeat(${RowColums.COLUMNS}, 80px)`,

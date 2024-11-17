@@ -49,12 +49,14 @@ const Home: React.FC = () => {
     /**
      * for animating enrty of sections
      */
-    useChildPopup(animationContainerRef, "0.3")
+    useChildPopup(animationContainerRef, "0.3", [])
 
     return (
         <div className="mx-[15%] my-[10px]" ref={animationContainerRef}>
             <div className="a-1 mt-[13%] mb-5 text-4xl font-bold overflow-hidden relative">
-                <p className="animated-text ">{HEADER_TEXT}</p>
+                <p className="animated-text dark:text-white text-[#0C0C0C]">
+                    {HEADER_TEXT}
+                </p>
                 <p className="animated-text animated-text-2">{HEADER_TEXT}</p>
                 <p className="animated-text animated-text-3">{HEADER_TEXT}</p>
             </div>
@@ -78,10 +80,10 @@ const Home: React.FC = () => {
                     <NavLink to={"/contact"}>Contact Me</NavLink>
                 </strong>
             </section>
-            <div className="a-3 my-10">
+            <div className="a-3 my-10 mb-10">
                 <NavLink
                     to={"/about"}
-                    className="flex gap-5 items-center w-fit group"
+                    className="flex gap-5 items-center w-fit group dark:text-white text-[#0C0C0C]"
                 >
                     <p className="group-hover:underline group-hover:underline-offset-4 ">
                         See More About Me
@@ -89,9 +91,7 @@ const Home: React.FC = () => {
                     <FaArrowRightLong className="text-2xl animate-arrow" />
                 </NavLink>
             </div>
-            <div className="a-4">
-                <Footer />
-            </div>
+            <Footer />
         </div>
     )
 }

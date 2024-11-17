@@ -178,7 +178,7 @@ const About: React.FC = () => {
         dispatch(setMouseIsHovered(false))
     }, [])
 
-    useChildPopup(animationContainerRef, "0.7")
+    useChildPopup(animationContainerRef, "0.7", [])
 
     return (
         <div
@@ -188,30 +188,30 @@ const About: React.FC = () => {
             {data.map((section, idx) => (
                 <div className="">
                     <header
-                        className={`${idx === 0 ? "text-6xl" : "text-2xl"}  font-bold my-1 relative w-fit`}
+                        className={`${idx === 0 ? "text-6xl" : "text-2xl"}  font-bold my-1 relative w-fit dark:text-white text-[#0C0C0C]`}
                     >
                         {section.header}
-                        <span className="after:absolute after:w-2 after:h-2 after:bg-white after:bottom-1 after:-right-3 after:my-1"></span>
+                        <span className="after:absolute after:w-2 after:h-2 after:bg-black dark:after:bg-white after:bottom-1 after:-right-3 after:my-1"></span>
                     </header>
-                    <div className="left-line *:my-10 relative before:content-[''] before:absolute before:top-2 before:left-0 before:bg-white before:w-[1px] before:h-full before:rounded-md">
+                    <div className="left-line *:my-10 relative before:content-[''] before:absolute before:top-2 before:left-0 before:bg-[#0C0C0C] dark:before:bg-white before:w-[1px] before:h-full before:rounded-md">
                         {section.children.map((child) => {
                             return (
                                 <div className="pl-5 relative before:content-[''] before:absolute before:top-2 before:-left-[0.5rem] before:border-2 before:bg-black before:w-4 before:aspect-square before:rounded-full">
                                     <header className="flex items-center justify-between ">
-                                        <p className="font-bold my-1 text-xl text-gray-200">
+                                        <p className="font-bold my-1 text-xl text-gray-700 dark:text-gray-200">
                                             {child.header}
                                         </p>
                                         <Link
                                             to={child.link.link}
                                             target="_blank"
-                                            className="underline hover:text-mouse-hover-color transition-all"
+                                            className="underline hover:text-mouse-hover-color transition-all dark:text-white text-gray-700"
                                             onMouseEnter={handleMousEnter}
                                             onMouseLeave={handleMousLeave}
                                         >
                                             {child.link.label}
                                         </Link>
                                     </header>
-                                    <div className="pl-3 text-gray-300 font-sans">
+                                    <div className="pl-3 text-gray-700 dark:text-gray-300 font-sans">
                                         {child.text}
                                     </div>
                                 </div>
@@ -223,7 +223,7 @@ const About: React.FC = () => {
             <div className="my-10">
                 <NavLink
                     to={"/projects"}
-                    className="flex gap-5 items-center w-fit group"
+                    className="flex gap-5 items-center w-fit group dark:text-white text-[#0C0C0C]"
                 >
                     <p className="group-hover:underline group-hover:underline-offset-4 ">
                         Lets Continue To Projects

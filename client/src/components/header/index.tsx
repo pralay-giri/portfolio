@@ -78,7 +78,7 @@ const Header: React.FC<PROPTYPE> = () => {
     return (
         <header className="flex my-16 mx-[15%] gap-5 items-center">
             {/* logo */}
-            <div className="logo text-4xl text-white mr-auto">
+            <div className="logo text-6xl font-bold text-[#0C0C0C] dark:text-white mr-auto">
                 <NavLink to={"/"}>PG.</NavLink>
             </div>
 
@@ -99,19 +99,21 @@ const Header: React.FC<PROPTYPE> = () => {
             </ul>
 
             {/* dark and light mode */}
-            <div className="cursor-pointer text-2xl">
+            <div className="cursor-pointer text-2xl text-black dark:text-white">
                 {theme === "DARK" ? (
-                    <AiFillSun
+                    <button
                         onClick={() => handleThemeChange("LIGHT")}
                         className="theme-button"
-                        role="button"
-                    />
+                    >
+                        <AiFillSun />
+                    </button>
                 ) : (
-                    <MdDarkMode
-                        onClick={() => handleThemeChange("DARK")}
+                    <button
                         className="theme-button"
-                        role="button"
-                    />
+                        onClick={() => handleThemeChange("DARK")}
+                    >
+                        <MdDarkMode />
+                    </button>
                 )}
             </div>
         </header>

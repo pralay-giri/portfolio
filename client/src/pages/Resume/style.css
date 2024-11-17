@@ -1,5 +1,5 @@
 .fullscreen {
-    @apply fixed w-full inset-0 left-0 top-0  backdrop-blur-lg;
+    @apply fixed w-full inset-0 left-0 top-0  backdrop-blur-lg z-[999] !m-2 !p-0;
 }
 
 .fullscreen > img {

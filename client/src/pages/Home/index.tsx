@@ -52,8 +52,11 @@ const Home: React.FC = () => {
     useChildPopup(animationContainerRef, "0.3", [])
 
     return (
-        <div className="mx-[15%] my-[10px]" ref={animationContainerRef}>
-            <div className="a-1 mt-[13%] mb-5 text-4xl font-bold overflow-hidden relative">
+        <div
+            className="my-10 mx-[5%] md:my-12 md:mx-[10%] lg:my-16 lg:mx-[15%]"
+            ref={animationContainerRef}
+        >
+            <div className="a-1 mt-[20%] md:mt-[13%] mb-5 text-xl md:text-2xl lg:text-4xl font-bold overflow-hidden relative">
                 <p className="animated-text dark:text-white text-[#0C0C0C]">
                     {HEADER_TEXT}
                 </p>
@@ -71,16 +74,17 @@ const Home: React.FC = () => {
                 <span className="my-1" />
                 <br />
                 Beyond the code? I,m a full-time coffee enthusiast and a
-                part-time tinkerer with emerging tech. Simplicity is my mantra—I
-                believe the best solutions are often the cleanest. When I,m not
-                deep in code, you,ll catch me diving into a good book, sketching
-                out new ideas, or getting lost in the grooves of a jazz melody.
-                Let,s build something amazing together. Feel free to reach out{" "}
+                part-time tinkerer with emerging tech. Simplicity is my mantra.
+                I believe the best solutions are often the cleanest. When I,m
+                not deep in code, you,ll catch me diving into a good book,
+                sketching out new ideas, or getting lost in the grooves of a
+                jazz melody. Let,s build something amazing together. Feel free
+                to reach out{" "}
                 <strong className="uppercase font-bold text-xl hover:underline transition-all">
                     <NavLink to={"/contact"}>Contact Me</NavLink>
                 </strong>
             </section>
-            <div className="a-3 my-10 mb-10">
+            <div className="a-3 my-10 mb-24">
                 <NavLink
                     to={"/about"}
                     className="flex gap-5 items-center w-fit group dark:text-white text-[#0C0C0C]"

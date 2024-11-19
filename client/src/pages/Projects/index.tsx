@@ -1,9 +1,7 @@
-import { setText } from "@/store/backGroundSlice"
 import { setMouseIsHovered } from "@/store/mouseSlice"
 import React, { useCallback, useEffect, useRef } from "react"
 import { useDispatch } from "react-redux"
 import "./index.css"
-import { Link, useNavigate } from "react-router-dom"
 import Footer from "@/components/footer"
 import { NavLink } from "react-router-dom"
 import { FaArrowRightLong } from "react-icons/fa6"
@@ -58,7 +56,6 @@ const Projects: React.FC = () => {
 
     useEffect(() => {
         dispatch(setMouseIsHovered(false))
-        dispatch(setText("Projects."))
     }, [])
 
     const handleMouseEnter = useCallback(() => {
@@ -85,16 +82,19 @@ const Projects: React.FC = () => {
     useChildPopup(animationContainerRef, "0.5", [])
 
     return (
-        <div className="mx-[15%] my-[7%]" ref={animationContainerRef}>
-            <header className="text-4xl font-bold relative w-fit text-[#0C0C0C] dark:text-white">
+        <div
+            className="my-10 mx-[5%] md:my-12 md:mx-[10%] lg:my-16 lg:mx-[15%]"
+            ref={animationContainerRef}
+        >
+            <header className="text-xl md:text-3xl lg:text-5xl font-bold relative w-fit text-[#0C0C0C] dark:text-white mt-12">
                 Projects
-                <span className="after:absolute after:w-2 after:h-2 after:bg-[#0C0C0C] dark:after:bg-white after:bottom-1 after:-right-3 after:rounded-sm"></span>
+                <span className="after:absolute after:w-1 after:h-1 lg:after:w-2 lg:after:h-2 after:bg-[#0C0C0C] dark:after:bg-white after:bottom-[8px]  lg:after:bottom-1 after:-right-3 lg:after:rounded-sm after:rounded-none"></span>
             </header>
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10">
+            <section className="grid grid-cols-1 lg:bg-transparent md:grid-cols-2 gap-5 my-10">
                 {projects.map((project) => {
                     return (
                         <div
-                            className="relative overflow-hidden rounded-xl border group cursor-pointer"
+                            className="relative overflow-hidden rounded-xl dark:border dark:border-gray-300 border-[#0C0C0C] group cursor-pointer"
                             key={project.name}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
@@ -102,13 +102,13 @@ const Projects: React.FC = () => {
                         >
                             <div className="opacity-0 group-hover:opacity-100 absolute inset-0 bg-gradient-to-t from-black/95 to-black/5 transition-all duration-300"></div>
                             <div className="text-sm p-4 absolute opacity-0 -bottom-[50%] group-hover:-bottom-0 transition-all duration-300 group-hover:opacity-100">
-                                <p className="text-xl md:text-2xl font-bold">
+                                <p className="text-lg lg:text-2xl font-bold">
                                     {project.name}
                                 </p>
-                                <p className="text-sm md:text-base">
+                                <p className="text-sm lg:text-md">
                                     {project.desc}
                                 </p>
-                                <div className="flex flex-wrap gap-1 font-serif *:bg-white *:bg-opacity-20 *:backdrop-blur-md *:px-3 *:py-1 *:rounded-2xl">
+                                <div className="*:md:text-xs *:lg:text-md flex flex-wrap gap-1 font-serif *:bg-white *:bg-opacity-20 *:backdrop-blur-md *:px-3 *:py-1 *:rounded-2xl">
                                     {project.tech.map((tech) => {
                                         return <p>{tech}</p>
                                     })}
@@ -124,7 +124,7 @@ const Projects: React.FC = () => {
                 })}
             </section>
 
-            <div className="a-3 my-10 text-[#0C0C0C] dark:text-white">
+            <div className="a-3 my-10 mb-24 text-[#0C0C0C] dark:text-white">
                 <NavLink
                     to={"/resume"}
                     className="flex gap-5 items-center w-fit group"

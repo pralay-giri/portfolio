@@ -1,15 +1,30 @@
 import { PROPTYPE } from "@/types"
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import "./index.css"
-import { useSelector } from "react-redux"
-import { RootState } from "@/store"
+import { useLocation } from "react-router-dom"
 const BOX_SIZE = 80
 
 const BackgroudGrid: React.FC<PROPTYPE> = () => {
     /**
      * background text
      */
-    const bgText = useSelector((state: RootState) => state.background.text)
+    const location = useLocation()
+    const bgText = (() => {
+        switch (location.pathname) {
+            case "/":
+                return "PG."
+            case "/about":
+                return "ABOUT."
+            case "/contact":
+                return "CONTACT."
+            case "/projects":
+                return "PROJECT."
+            case "/resume":
+                return "RESUME."
+            default:
+                return "PG."
+        }
+    })()
 
     const gridContainer = useRef<HTMLDivElement | null>(null)
 
@@ -60,7 +75,14 @@ const BackgroudGrid: React.FC<PROPTYPE> = () => {
             </div>
             <div className="bg-color"></div>
             <div className="bg-image"></div>
-            <div className="text">{bgText}</div>
+            <div
+                className="text"
+                style={{
+                    top: `${window.innerWidth >= 1024 ? "calc(100% - 22rem)" : window.innerWidth >= 768 ? "calc(100% - 15rem)" : "calc(100% - 13rem)"}`,
+                }}
+            >
+                {bgText}
+            </div>
             <div className="overlay"></div>
         </div>
     )

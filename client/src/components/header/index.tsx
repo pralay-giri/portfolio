@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 import { AiFillSun } from "react-icons/ai"
 import { MdDarkMode } from "react-icons/md"
+import { FaBarsStaggered } from "react-icons/fa6"
 import { useSelector } from "react-redux"
 import { RootState } from "@/store"
 import { useDispatch } from "react-redux"
@@ -54,6 +55,19 @@ const Header: React.FC<PROPTYPE> = () => {
     )
 
     /**
+     * state for navbar
+     */
+    const [isNavBarVisible, setIsnavBarVisible] = useState<boolean>(false)
+
+    useEffect(() => {
+        if (isNavBarVisible) {
+            document.documentElement.style.overflow = "hidden"
+        } else {
+            document.documentElement.style.overflow = "visible"
+        }
+    }, [isNavBarVisible])
+
+    /**
      * setting the location/path name
      */
     useEffect(() => {
@@ -76,19 +90,22 @@ const Header: React.FC<PROPTYPE> = () => {
     }
 
     return (
-        <header className="flex my-16 mx-[15%] gap-5 items-center">
+        <header
+            className={`${isNavBarVisible ? "navbar-active" : ""} flex  my-10 mx-[5%] md:my-12 md:mx-[10%] lg:my-16 lg:mx-[15%] gap-5 items-center`}
+        >
             {/* logo */}
-            <div className="logo text-6xl font-bold text-[#0C0C0C] dark:text-white mr-auto">
+            <div className="logo text-3xl md:text-4xl lg:text-6xl font-bold text-[#0C0C0C] dark:text-white mr-auto">
                 <NavLink to={"/"}>PG.</NavLink>
             </div>
 
             {/* Navigation linkes */}
-            <ul className="flex gap-5 justify-evenly items-center">
+            <ul className="lg:flex gap-5 justify-evenly items-center lg:visible hidden">
                 {navigationLinks.map((nav) =>
                     nav.path !== activePath ? (
                         <li
                             key={nav.id}
                             className="nav-hover"
+                            onClick={() => setIsnavBarVisible(false)}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         >
@@ -96,26 +113,31 @@ const Header: React.FC<PROPTYPE> = () => {
                         </li>
                     ) : null,
                 )}
+                {/* dark and light mode */}
+                <li className="cursor-pointer text-2xl text-[#0C0C0C] dark:text-white z-[999]">
+                    {theme === "DARK" ? (
+                        <button
+                            onClick={() => handleThemeChange("LIGHT")}
+                            className="theme-button"
+                        >
+                            <AiFillSun />
+                        </button>
+                    ) : (
+                        <button
+                            className="theme-button"
+                            onClick={() => handleThemeChange("DARK")}
+                        >
+                            <MdDarkMode />
+                        </button>
+                    )}
+                </li>
             </ul>
-
-            {/* dark and light mode */}
-            <div className="cursor-pointer text-2xl text-black dark:text-white">
-                {theme === "DARK" ? (
-                    <button
-                        onClick={() => handleThemeChange("LIGHT")}
-                        className="theme-button"
-                    >
-                        <AiFillSun />
-                    </button>
-                ) : (
-                    <button
-                        className="theme-button"
-                        onClick={() => handleThemeChange("DARK")}
-                    >
-                        <MdDarkMode />
-                    </button>
-                )}
-            </div>
+            <button
+                className="lg:hidden relative z-[999] text-2xl dark:text-white text-[#0C0C0C]"
+                onClick={() => setIsnavBarVisible((prev) => !prev)}
+            >
+                <FaBarsStaggered />
+            </button>
         </header>
     )
 }

@@ -1,5 +1,4 @@
 import { RootState } from "@/store"
-import { setText } from "@/store/backGroundSlice"
 import { setMouseIsHovered } from "@/store/mouseSlice"
 import React, {
     BaseSyntheticEvent,
@@ -37,7 +36,6 @@ const Contact: React.FC = () => {
 
     useEffect(() => {
         dispatch(setMouseIsHovered(false))
-        dispatch(setText("CONTACT."))
     }, [])
 
     useGSAP(() => {
@@ -77,14 +75,14 @@ const Contact: React.FC = () => {
 
     return (
         <div
-            className="mx-[15%] my-24 font-serif text-[#0C0C0C] dark:text-white"
+            className="my-10 mx-[5%] md:my-12 md:mx-[10%] lg:my-16 lg:mx-[15%] font-serif text-[#0C0C0C] dark:text-white"
             ref={animationContext}
         >
-            <header className="text-6xl font-bold relative w-fit">
+            <header className="text-2xl md:text-4xl lg:text-6xl font-bold relative w-fit">
                 Contact
-                <span className="after:absolute after:w-2 after:h-2 after:bg-[#0C0C0C] dark:after:bg-white after:bottom-2 after:-right-3"></span>
+                <span className="after:absolute after:w-1 after:h-1 lg:after:w-2 lg:after:h-2 after:bg-[#0C0C0C] dark:after:bg-white after:bottom-2 after:-right-3 lg:after:rounded-sm"></span>
             </header>
-            <p className="my-10">
+            <p className="my-10 text-md lg:text-lg">
                 Get in touch or send a email directly on{" "}
                 <strong
                     className="font-bold cursor-pointer"
@@ -94,7 +92,7 @@ const Contact: React.FC = () => {
                 </strong>
             </p>
             <form onSubmit={handleSendMessage}>
-                <section className="flex flex-col *:w-[60%] gap-10 *:px-4 *:py-3 *:text-xl *:bg-transparent *:border *:border-gray-700  *:outline-none *:rounded-sm *:opacity-85 *:transition-all dark:*:placeholder:text-inherit *:placeholder:text-[#0C0C0C] *:placeholder:opacity-60">
+                <section className="flex flex-col *:md:w-[80%] *:lg:w-[60%] gap-10 *:px-4 *:py-3 *:text-md *:md:text-lg *:lg:text-xl *:bg-transparent *:border *:border-gray-700  *:outline-none *:rounded-sm *:opacity-85 *:transition-all dark:*:placeholder:text-inherit *:placeholder:text-[#0C0C0C] *:placeholder:opacity-60">
                     <input
                         type="text"
                         name="name"
@@ -126,14 +124,14 @@ const Contact: React.FC = () => {
                         onChange={handleInputsCnahge}
                     ></textarea>
                 </section>
-                <button className="text-lg font-thin rounded-sm my-10  bg-[#0C0C0C] text-white dark:bg-gray-200 dark:text-[#0C0C0C] px-5 py-3 flex gap-2 justify-center items-center overflow-hidden">
+                <button className="text-sm md:text-md lg:text-lg font-thin rounded-sm my-10  bg-[#0C0C0C] text-white dark:bg-gray-200 dark:text-[#0C0C0C] px-5 py-3 flex gap-2 justify-center items-center overflow-hidden">
                     Send Message
                     <span className="send-icon">
                         <IoSend />
                     </span>
                 </button>
             </form>
-            <div className="my-10">
+            <div className="my-10 mb-24">
                 <NavLink
                     to={"/"}
                     className="flex gap-5 items-center w-fit group"

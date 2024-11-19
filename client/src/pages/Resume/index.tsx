@@ -39,6 +39,10 @@ const index: React.FC = () => {
         }
     }, [])
 
+    useEffect(() => {
+        dispatch(setMouseIsHovered(false))
+    }, [])
+
     const handleMousEnter = useCallback(() => {
         dispatch(setMouseIsHovered(true))
     }, [])
@@ -96,21 +100,21 @@ const index: React.FC = () => {
 
     return (
         <div
-            className="mx-[15%] my-[4%] text-[#0C0C0C] dark:text-white"
+            className="my-10 mx-[5%] md:my-12 md:mx-[10%] lg:my-16 lg:mx-[15%] text-[#0C0C0C] dark:text-white"
             ref={animationContainerRef}
         >
-            <header className="text-6xl font-bold relative w-fit">
+            <header className="text-2xl md:text-3xl lg:text-6xl font-bold relative w-fit">
                 Resume
-                <span className="after:absolute after:w-2 after:h-2 after:bg-[#0C0C0C] dark:after:bg-white after:bottom-3 after:-right-3 after:rounded-sm"></span>
+                <span className="after:absolute after:w-1 after:h-1 lg:after:w-2 lg:after:h-2 after:bg-[#0C0C0C] dark:after:bg-white after:bottom-[8px] lg:after:bottom-3 after:-right-3 lg:after:rounded-sm"></span>
             </header>
             <p className="my-5">
                 <span>Reach out to me via</span>{" "}
-                <Link to="/contact" className="font-bold text-lg">
+                <Link to="/contact" className="font-bold text-md lg:text-lg">
                     Contact Page
                 </Link>{" "}
                 <span>or</span>{" "}
                 <a
-                    className="font-bold text-lg cursor-pointer"
+                    className="font-bold text-md lg:text-lg cursor-pointer"
                     download={"pralay-resume.docx"}
                     href={"/pralay_resume.docx"}
                 >
@@ -118,7 +122,7 @@ const index: React.FC = () => {
                 </a>
             </p>
             <div
-                className="w-[75%] relative group my-10"
+                className="md:w-[85%] lg:w-[75%] relative group my-10"
                 onMouseEnter={handleMousEnter}
                 onMouseLeave={handleMousLeave}
                 ref={resumeDiv}
@@ -165,27 +169,43 @@ const index: React.FC = () => {
                             <Link
                                 to={"https://github.com/pralay-giri"}
                                 target="_blank"
-                                className="text-4xl"
                             >
-                                <FaRegCircleUser />
+                                <div className="w-10 aspect-square border-[0C0C0C] rounded-full overflow-hidden bg-[#0C0C0C]">
+                                    {true ? (
+                                        <img
+                                            src={
+                                                "https://avatars.githubusercontent.com/u/120795479?s=400&u=e5df80639710bcc3f27f99e5f5c99df1acfaa844&v=4"
+                                            }
+                                            alt=""
+                                            className="object-center"
+                                        />
+                                    ) : (
+                                        <div className="*:text-xl grid place-content-center text-white h-full">
+                                            P
+                                        </div>
+                                    )}
+                                </div>
                             </Link>
                             <p className="flex flex-col">
-                                <span className="text-lg font-bold">
+                                <Link
+                                    to={"/"}
+                                    className="text-sm md:text-md lg:text-lg font-bold hover:underline transition-all"
+                                >
                                     Pralay Giri
-                                </span>
-                                <span className="font-thin dark:text-gray-700 text-gray-200">
+                                </Link>
+                                <span className="text-xs md:text-sm lg:text-md font-thin dark:text-gray-700 text-gray-200">
                                     Created by pralay giri
                                 </span>
                             </p>
                         </div>
                         <button
                             onClick={handleHideControles}
-                            className="text-2xl hover:opacity-60 transition-all cursor-pointer"
+                            className="text-xl md:text-2xl hover:opacity-60 transition-all cursor-pointer"
                         >
                             <RxCross1 />
                         </button>
                     </header>
-                    <section className="fixed flex gap-7 items-center justify-center w-full h-full *:w-14 *:aspect-square *:text-2xl *:bg-gray-800 dark:*:bg-white *:text-white dark:*:text-gray-800 *:rounded-full *:flex *:items-center *:justify-center *:backdrop-blur-sm *:bg-opacity-55 ">
+                    <section className="fixed flex gap-7 items-center justify-center w-full h-full *:w-11 *:lg:w-14 *:aspect-square *:text-xl *:lg:text-2xl *:bg-gray-800 dark:*:bg-white *:text-white dark:*:text-gray-800 *:rounded-full *:flex *:items-center *:justify-center *:backdrop-blur-sm *:bg-opacity-55 ">
                         <button
                             className="hover:opacity-60 transition-all"
                             onClick={handleShareResume}
@@ -207,7 +227,7 @@ const index: React.FC = () => {
                     </section>
                 </div>
             </div>
-            <div className="a-3 my-10">
+            <div className="a-3 my-10 mb-24">
                 <NavLink
                     to={"/contact"}
                     className="flex gap-5 items-center w-fit group"

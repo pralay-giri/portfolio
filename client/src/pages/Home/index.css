@@ -15,7 +15,3 @@
     @apply absolute top-0 -left-[2px] bg-clip-text bg-[#f7418f] !text-transparent;
     z-index: -1;
 }
-
-.animate-arrow {
-    /* animation: alternate; */
-}

@@ -5,6 +5,7 @@ import "./index.css"
 import { PROPTYPE } from "@/types"
 import { useSelector } from "react-redux"
 import { RootState } from "@/store"
+import { checkDeviceIsPhone } from "@/utils/checkDeviceIsPhone"
 
 /**
  * register the puglins
@@ -16,29 +17,16 @@ const MouseFollower: React.FC<PROPTYPE> = () => {
         (state: RootState) => state.mouse.isLinkHovered,
     )
 
-    /**
-     * state for is mouse is in Dom or not
-     */
     const [isMouseInDom, setIsMouseInDom] = useState(false)
 
-    /**
-     * ref for the container
-     */
     const containerScope = useRef<HTMLDivElement | null>(null)
-
-    /**
-     * inner dot element
-     */
     const dotRef = useRef<HTMLDivElement | null>(null)
-
-    /**
-     * outer circle
-     */
     const circleRef = useRef<HTMLDivElement | null>(null)
 
     const { contextSafe } = useGSAP({ scope: containerScope })
 
     const handleMouseMove = contextSafe((e: MouseEvent) => {
+        if (checkDeviceIsPhone()) return
         gsap.to(".dot", {
             y: e.clientY + "px",
             x: e.clientX + "px",
@@ -52,7 +40,7 @@ const MouseFollower: React.FC<PROPTYPE> = () => {
         })
     })
 
-    const handleMouseEnter = () => {
+    const handleMouseEnter = (e: MouseEvent) => {
         setIsMouseInDom((_) => true)
     }
 
@@ -65,13 +53,15 @@ const MouseFollower: React.FC<PROPTYPE> = () => {
 
         return () => {
             window.removeEventListener("mousemove", handleMouseMove)
+            document.documentElement.removeEventListener(
+                "mouseenter",
+                handleMouseEnter,
+            )
         }
     }, [])
 
-    /**
-     * animate the mouse fllower component respect to isLinkHovered
-     */
     useGSAP(() => {
+        if (!containerScope || checkDeviceIsPhone()) return null
         if (isLinkHovered) {
             gsap.to(".dot", {
                 width: "20px",
@@ -97,6 +87,9 @@ const MouseFollower: React.FC<PROPTYPE> = () => {
         }
     }, [{ scope: containerScope, dependencies: [isLinkHovered] }])
 
+    console.log(checkDeviceIsPhone())
+
+    if (checkDeviceIsPhone()) return null
     return (
         <div
             ref={containerScope}

@@ -7,9 +7,8 @@
 }
 
 .text {
-    @apply fixed overflow-hidden w-screen h-screen inset-0 left-0 uppercase text-gray-800 dark:text-gray-500 -z-20 opacity-10 font-extrabold;
-    font-size: 18rem;
-    top: calc(100% - 22rem);
+    @apply fixed overflow-hidden w-screen h-screen inset-0 left-0 bottom-0 uppercase text-gray-800 dark:text-gray-500 -z-20 opacity-10 font-extrabold text-[8rem] md:text-[10rem] lg:text-[18rem];
+    /* font-size: 18rem; */
 }
 
 .bg-image {

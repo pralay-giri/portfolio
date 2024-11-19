@@ -32,11 +32,12 @@ const links = [
 const Footer: React.FC = () => {
     const dispatch = useDispatch()
     return (
-        <div className="lg:relative lg:bg-transparent lg:w-full lg:bg-red-500 lg:justify-normal lg:backdrop-blur-none lg:bg-none flex gap-10 text-xl fixed justify-evenly bottom-0 left-0 w-full bg-black py-3 px-5 bg-opacity-20 backdrop-blur-lg dark:text-white text-[#0C0C0C]">
+        <div className="lg:relative lg:bg-transparent lg:w-full lg:justify-normal lg:backdrop-blur-none lg:bg-none flex gap-10 text-xl fixed justify-evenly bottom-0 left-0 w-full bg-black py-3 px-5 bg-opacity-20 backdrop-blur-lg dark:text-white text-[#0C0C0C]">
             {links.map((link) => {
                 return (
                     <Link
                         to={link.link}
+                        key={link.name}
                         className="hover:text-mouse-hover-color transition-colors"
                         onMouseEnter={() => dispatch(setMouseIsHovered(true))}
                         onMouseLeave={() => dispatch(setMouseIsHovered(false))}

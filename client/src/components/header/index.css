@@ -8,3 +8,8 @@
 .nav-hover:hover::before {
     @apply w-[100%] scale-x-100;
 }
+
+.navbar-active ul {
+    @apply absolute flex flex-col inset-0 z-[999]  top-[25%] justify-start gap-10 before:content-[''] before:fixed before:inset-0 
+        before:backdrop-blur-lg dark:before:bg-black before:bg-white dark:before:bg-opacity-45 before:bg-opacity-20;
+}

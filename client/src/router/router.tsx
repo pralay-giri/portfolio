@@ -5,7 +5,9 @@ import About from "@pages/About"
 import Contact from "@pages/Contact"
 import Projects from "@pages/Projects"
 import Resume from "@pages/Resume"
+import Admin from "@pages/Admin"
 import Loadder from "@/components/loadder"
+import Error from "@/pages/Error"
 const App = lazy(() => import("@/App"))
 
 export const router = createBrowserRouter([
@@ -33,6 +35,14 @@ export const router = createBrowserRouter([
                 path: "/resume",
                 element: <Resume />,
             },
+            {
+                path: "/admin",
+                element: <Admin />,
+            },
         ],
+    },
+    {
+        path: "*",
+        element: <Error />,
     },
 ])

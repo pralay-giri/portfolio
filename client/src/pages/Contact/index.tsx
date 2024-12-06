@@ -61,8 +61,6 @@ const Contact: React.FC = () => {
                 toast.error("invalid contact information!!!")
                 return
             }
-            toast.error("api call")
-            toast.success("message sent successfully!")
         },
         [contactInputs],
     )

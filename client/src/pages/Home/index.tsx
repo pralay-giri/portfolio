@@ -64,22 +64,26 @@ const Home: React.FC = () => {
                 <p className="animated-text animated-text-3">{HEADER_TEXT}</p>
             </div>
             <section className="a-2 font-sans capitalize  dark:text-gray-200 text-black">
-                <strong className="text-[#f7418f] text-2xl">A</strong> front-end
-                developer, back-end problem solver, and JavaScript enthusiast.
-                By day (and occasionally night), I,m busy transforming ideas
-                into code, crafting seamless web applications, and building
-                user-friendly interfaces. From pixels to powerful APIs, I turn
-                concepts into interactive, immersive digital experiences.
+                <strong className="text-[#f7418f] text-2xl">A</strong> Full-stack
+                Developer, React Native Developer, and Backend Architect.
+                Currently engineering high-performance applications at{" "}
+                <strong>Teqsonic</strong>, I focus on transforming complex
+                ideas into scalable web and mobile solutions using{" "}
+                <strong>Node.js, React, and NestJS</strong>. From building
+                secure payment microservices to optimizing real-time data
+                pipelines, I focus on creating seamless, user-centric digital
+                experiences.
                 <br />
                 <span className="my-1" />
                 <br />
-                Beyond the code? I,m a full-time coffee enthusiast and a
-                part-time tinkerer with emerging tech. Simplicity is my mantra.
-                I believe the best solutions are often the cleanest. When I,m
-                not deep in code, you,ll catch me diving into a good book,
-                sketching out new ideas, or getting lost in the grooves of a
-                jazz melody. Let,s build something amazing together. Feel free
-                to reach out{" "}
+                Beyond the terminal? I'm an MCA student with a deep passion for{" "}
+                <strong>Data Structures, Algorithms</strong>, and exploring
+                real-time technologies like <strong>WebRTC</strong>. I believe
+                that the best code is not just functional, but clean and
+                efficient. When I'm not building the next big thing, you'll find
+                me diving into tech blogs, sketching new architectures, or
+                enjoying a perfect cup of coffee. Let's build something
+                exceptional together. Feel free to reach out{" "}
                 <strong className="uppercase font-bold text-xl hover:underline transition-all">
                     <NavLink to={"/contact"}>Contact Me</NavLink>
                 </strong>

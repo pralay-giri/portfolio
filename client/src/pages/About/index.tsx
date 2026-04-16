@@ -13,143 +13,139 @@ gsap.registerPlugin(useGSAP)
 
 const data = [
     {
-        header: "About Me",
+        header: "Professional Experience",
         children: [
             {
-                header: "Experience",
+                header: "Full-stack, React Native Developer",
                 link: {
-                    link: "https://www.techriskpartners.com/",
-                    label: "view Company",
+                    link: "https://teqsonic.com",
+                    label: "view Teqsonic",
                 },
                 text: (
                     <>
-                        I have experience as a backend developer in a software
-                        company{" "}
+                        Currently at{" "}
+                        <Link
+                            to="https://teqsonic.com"
+                            target="_blank"
+                            className="font-bold underline hover:text-mouse-hover-color transition-all "
+                        >
+                            Teqsonic
+                        </Link>{" "}
+                        (July 2025 - Present), I engineered a shared React
+                        Native/TailwindCSS library, cutting code duplication by
+                        25% across platforms. I also architected secure NestJS
+                        payment microservices with WebSockets and optimized SQL
+                        queries to reduce API latency from 170ms to 100ms.
+                    </>
+                ),
+            },
+            {
+                header: "Full-stack Developer",
+                link: {
+                    link: "https://www.linkedin.com/search/results/all/?keywords=Bitslate%20Infotech",
+                    label: "view Bitslate",
+                },
+                text: (
+                    <>
+                        At <strong>Bitslate Infotech</strong> (Sep 2024 - Mar
+                        2025), I engineered secure multi-gateway payment
+                        integrations (Stripe, Razorpay, PayPal) for high-volume
+                        e-commerce systems and implemented recurring billing
+                        logic using webhooks to automate renewals and minimize
+                        churn.
+                    </>
+                ),
+            },
+            {
+                header: "Back-end Developer",
+                link: {
+                    link: "https://www.techriskpartners.com/",
+                    label: "view TRP Global",
+                },
+                text: (
+                    <>
+                        At{" "}
                         <Link
                             to="https://www.techriskpartners.com/"
                             target="_blank"
                             className="font-bold underline hover:text-mouse-hover-color transition-all "
                         >
                             TRP GLOBAL
-                        </Link>
-                        , where I specialized in building and maintaining
-                        server-side applications. My work focused on creating
-                        efficient, scalable, and secure APIs, managing
-                        databases, and ensuring seamless data flow between the
-                        front end and back end. This role allowed me to gain
-                        deep experience in server-side programming with [mention
-                        key technologies, e.g., Node.js, Express, MSSQL, OLAP,
-                        Message-Queues etc.], as well as in optimizing
-                        application performance and integrating third-party
-                        services. Through this position, I worked closely with
-                        cross-functional teams, ensuring that backend solutions
-                        aligned with project goals and met user needs. This
-                        experience strengthened my problem-solving skills,
-                        enhanced my ability to write clean, maintainable code,
-                        and gave me insight into best practices for system
-                        architecture and database management.
-                    </>
-                ),
-            },
-            {
-                header: "Engineering",
-                link: {
-                    link: "https://github.com/pralay-giri?tab=repositories",
-                    label: "view Github",
-                },
-                text: (
-                    <>
-                        Hello! I'm a SDE with a strong focus on building
-                        reliable, efficient, and user-friendly applications. My
-                        journey in software development has been driven by a
-                        love for problem-solving and a passion for technology.
-                        With experience in [mention specific languages,
-                        frameworks, or technologies, e.g., JavaScript, Node.js,
-                        React, etc.], I specialize in developing robust
-                        applications that address real-world challenges.
-                    </>
-                ),
-            },
-            {
-                header: "Education",
-                link: {
-                    link: "https://makaut1.ucanapply.com/",
-                    label: "view University",
-                },
-                text: (
-                    <>
-                        I hold a degree in BCA from 'West Bengal University of
-                        Technology', and persuing my MCA degree. My education
-                        provided me with a strong foundation in key areas like
-                        programming, software development, and systems
-                        architecture. Through a combination of coursework and
-                        hands-on projects, I gained expertise in [mention any
-                        specific areas, e.g., web development, data structures,
-                        algorithms, machine learning].In addition to technical
-                        skills, my education emphasized critical thinking,
-                        problem-solving, and effective collaboration. I also
-                        took part in various projects and internships that
-                        allowed me to apply theoretical knowledge to real-world
-                        challenges, further developing my skill set and
-                        preparing me for a career in software development.
+                        </Link>{" "}
+                        (May 2024 - Aug 2024), I automated SAP ERP data
+                        pipelines using SQL, cutting manual validation time by
+                        40%. I also developed OLAP cubes with Node.js and MSSQL
+                        to drive actionable business intelligence dashboards.
                     </>
                 ),
             },
         ],
     },
     {
-        header: "My Reads",
+        header: "Education",
         children: [
             {
-                header: "Data Structure And Algorithm",
+                header: "Master of Computer Applications (MCA)",
                 link: {
-                    link: "https://www.geeksforgeeks.org/data-structures/",
-                    label: "view Resource",
+                    link: "https://makaut1.ucanapply.com/",
+                    label: "view University",
                 },
                 text: (
                     <>
-                        Data Structures and Algorithms (DSA) form the backbone
-                        of efficient programming and problem-solving in computer
-                        science. Mastering DSA has empowered me to write
-                        optimized code, solve complex challenges, and build
-                        scalable applications. Through my experience, I've
-                        become proficient in fundamental data structures such as
-                        arrays, linked lists, stacks, queues, and trees, as well
-                        as advanced structures like graphs and hash tables.
-                        Understanding these structures allows me to select the
-                        right tool for each task, improving both performance and
-                        readability. I've also worked with core algorithms,
-                        including sorting, searching, dynamic programming, and
-                        recursion. By learning to approach problems with a solid
-                        algorithmic mindset, I can break down challenges into
-                        manageable steps and develop robust, efficient
-                        solutions. My focus on DSA continues to drive my growth
-                        as a software developer, allowing me to bring more
-                        impactful and efficient code to every project.
+                        Pursuing MCA at the{" "}
+                        <strong>West Bengal University of Technology</strong>{" "}
+                        (2024 - 2026), focusing on advanced software
+                        engineering, scalable system design, and deepening my
+                        technical expertise to solve complex real-world
+                        challenges.
                     </>
                 ),
             },
             {
-                header: "Software Development Life Cycle (SDLC)",
+                header: "Bachelor of Computer Applications (BCA)",
                 link: {
-                    link: "https://www.geeksforgeeks.org/software-development-life-cycle-sdlc/",
-                    label: "view Resource",
+                    link: "https://makaut1.ucanapply.com/",
+                    label: "view University",
                 },
                 text: (
                     <>
-                        The Software Development Life Cycle (SDLC) is a crucial
-                        framework that guides the development process from
-                        inception to deployment and maintenance. Understanding
-                        and applying SDLC methodologies have been instrumental
-                        in my approach to software development, ensuring that
-                        projects are delivered on time and meet quality
-                        standards.
+                        Graduated with a GPA of <strong>8.16</strong> from the{" "}
+                        <strong>West Bengal University of Technology</strong>{" "}
+                        (2021 - 2024). This period provided me with a solid
+                        foundation in data structures, algorithms, and core
+                        programming principles.
+                    </>
+                ),
+            },
+        ],
+    },
+    {
+        header: "Skills & Technologies",
+        children: [
+            {
+                header: "Engineering Stack",
+                link: {
+                    link: "https://github.com/pralay-giri?tab=repositories",
+                    label: "view Github",
+                },
+                text: (
+                    <>
+                        My expertise includes <strong>JavaScript</strong> and{" "}
+                        <strong>TypeScript</strong>, with familiarity in{" "}
+                        <strong>C, C++, and Python</strong>. My primary stack
+                        includes{" "}
+                        <strong>
+                            React Native, React, Node.js, Express.js, and NestJS
+                        </strong>
+                        . I am proficient in managing <strong>PostgreSQL, MySQL, and MongoDB</strong> databases, and utilizing tools like{" "}
+                        <strong>Sequelize, Bull, Git, and Postman</strong>.
                     </>
                 ),
             },
         ],
     },
 ]
+
 
 const About: React.FC = () => {
     const dispatch = useDispatch()

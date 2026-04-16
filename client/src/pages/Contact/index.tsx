@@ -29,6 +29,21 @@ const valdateInputs = (payload: {
     return [payload.name, payload.email, payload.message].every((d) => d)
 }
 
+const sendMessage = async (payload: {
+    name: string
+    email: string
+    message: string
+}) => {
+    const url = `http://localhost:3000/send-gmail`
+    const response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(payload),
+    })
+
+    const data = await response.json()
+    return data
+}
+
 const Contact: React.FC = () => {
     const dispatch = useDispatch()
     const contactInputs = useSelector((state: RootState) => state.contact)
@@ -55,14 +70,19 @@ const Contact: React.FC = () => {
     }, [])
 
     const handleSendMessage = useCallback(
-        (e: FormEvent<HTMLFormElement>) => {
+        async (e: FormEvent<HTMLFormElement>) => {
             e.preventDefault()
             if (!valdateInputs(contactInputs)) {
                 toast.error("invalid contact information!!!")
                 return
             }
-            toast.error("api call")
-            toast.success("message sent successfully!")
+            try {
+                const data = await sendMessage(contactInputs)
+                toast.success("message sent successfully!")
+            } catch (error) {
+                console.log(error)
+                toast.success("Faild to send message")
+            }
         },
         [contactInputs],
     )

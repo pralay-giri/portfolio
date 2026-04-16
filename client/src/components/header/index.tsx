@@ -16,27 +16,27 @@ const navigationLinks: {
     name: string | number
     path: string
 }[] = [
-    {
-        id: 1,
-        name: "About",
-        path: "about",
-    },
-    {
-        id: 2,
-        name: "Projects",
-        path: "projects",
-    },
-    {
-        id: 3,
-        name: "Contact",
-        path: "contact",
-    },
-    {
-        id: 4,
-        name: "Resume",
-        path: "resume",
-    },
-]
+        {
+            id: 1,
+            name: "About",
+            path: "about",
+        },
+        {
+            id: 2,
+            name: "Projects",
+            path: "projects",
+        },
+        // {
+        //     id: 3,
+        //     name: "Contact",
+        //     path: "contact",
+        // },
+        {
+            id: 3,
+            name: "Resume",
+            path: "resume",
+        },
+    ]
 
 const Header: React.FC<PROPTYPE> = () => {
     /**
